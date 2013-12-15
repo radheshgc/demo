@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>logger(1) — Linux manual pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="logger(1) — Linux manual pages" />
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index1.html" shape="rect">Section 1</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry" title="logger(1) — Linux manual pages">
+    <a id="logger.1" name="logger.1" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>logger — a shell command interface to the syslog(3)
+      system log module</p>
+    </div>
+
+    <div class="refsynopsisdiv" title="Synopsis">
+      <h2>Synopsis</h2>
+
+      <div class="cmdsynopsis">
+        <p><code class="command">logger</code> [options]
+        [message]</p>
+      </div>
+    </div>
+
+    <div class="refsect1" title="DESCRIPTION">
+      <a id="logger-1_sect1" name="logger-1_sect1" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p><span class="command"><strong>logger</strong></span> makes
+      entries in the system log. It provides a shell command
+      interface to the <a class="link" href="../htmlman3/syslog.3.html" target="_top" shape="rect"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a> system log
+      module.</p>
+    </div>
+
+    <div class="refsect1" title="OPTIONS">
+      <a id="logger-1_sect2" name="logger-1_sect2" shape="rect"> </a>
+
+      <h2>OPTIONS</h2>
+
+      <div class="variablelist">
+        <dl>
+          <dt><span class="term"><code class="option">−d</code>, <code class="option">−−udp</code></span></dt>
+
+          <dd>
+            <p>Use datagram (UDP) instead of the default stream
+            connection (TCP).</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−i</code>, <code class="option">−−id</code></span></dt>
+
+          <dd>
+            <p>Log the process ID of the logger process with each
+            line.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−f</code>, <code class="option">−−file</code> <span class="command"><strong>file</strong></span></span></dt>
+
+          <dd>
+            <p>Log the contents of the specified <span class="command"><strong>file</strong></span>. This option
+            cannot be combined with a command-line message.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−h</code>, <code class="option">−−help</code></span></dt>
+
+          <dd>
+            <p>Display a help text and exit.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−n</code>, <code class="option">−−server</code> <span class="command"><strong>server</strong></span></span></dt>
+
+          <dd>
+            <p>Write to the specified remote syslog <span class="command"><strong>server</strong></span> using UDP
+            instead of to the builtin syslog routines.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−P</code>, <code class="option">−−port</code> <span class="command"><strong>port</strong></span></span></dt>
+
+          <dd>
+            <p>Use the specified UDP <span class="command"><strong>port</strong></span>. The default
+            port number is 514.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−p</code>, <code class="option">−−priority</code> <span class="command"><strong>priority</strong></span></span></dt>
+
+          <dd>
+            <p>Enter the message into the log with the specified
+            <span class="command"><strong>priority</strong></span>.
+            The priority may be specified numerically or as a
+            <em class="replaceable"><code>facility.level</code></em> pair.
+            For example, <code class="option">−p</code>
+            <em class="replaceable"><code>local3.info</code></em>
+            logs the message as informational in the local3
+            facility. The default is <em class="replaceable"><code>user.notice</code></em>.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−s</code>, <code class="option">−−stderr</code></span></dt>
+
+          <dd>
+            <p>Output the message to standard error as well as to
+            the system log.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−t</code>, <code class="option">−−tag</code> <span class="command"><strong>tag</strong></span></span></dt>
+
+          <dd>
+            <p>Mark every line to be logged with the specified
+            <span class="command"><strong>tag</strong></span>.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−u</code>, <code class="option">−−socket</code> <span class="command"><strong>socket</strong></span></span></dt>
+
+          <dd>
+            <p>Write to the specified <span class="command"><strong>socket</strong></span> instead of to
+            the builtin syslog routines.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−V</code>, <code class="option">−−version</code></span></dt>
+
+          <dd>
+            <p>Display version information and exit.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−</code></span></dt>
+
+          <dd>
+            <p>End the argument list. This is to allow the
+            <em class="parameter"><code>message</code></em> to
+            start with a hyphen (−).</p>
+          </dd>
+
+          <dt><span class="term"><em class="parameter"><code>message</code></em></span></dt>
+
+          <dd>
+            <p>Write the message to log; if not specified, and the
+            <code class="option">−f</code> flag is not
+            provided, standard input is logged.</p>
+          </dd>
+        </dl>
+      </div>
+
+      <p>The <span class="command"><strong>logger</strong></span>
+      utility exits 0 on success, and &gt;0 if an error occurs.</p>
+
+      <p>Valid facility names are: <span class="command"><strong>auth</strong></span>,authpriv (for security
+      information of a sensitive nature), <span class="command"><strong>cron</strong></span>,daemon<code class="literal">,</code><span class="command"><strong>ftp</strong></span>,kern (can't be
+      generated from user process), <span class="command"><strong>lpr</strong></span>,mail<code class="literal">,</code><span class="command"><strong>news</strong></span>,security (deprecated
+      synonym for <span class="command"><strong>auth</strong></span>),syslog<code class="literal">,</code><span class="command"><strong>user</strong></span>,uucp<code class="literal">,</code> and <span class="command"><strong>local0</strong></span><span class="command"><strong>to</strong></span><span class="command"><strong>local7</strong></span>, inclusive.</p>
+
+      <p>Valid level names are: <span class="command"><strong>alert</strong></span>,crit<code class="literal">,</code><span class="command"><strong>debug</strong></span>,emerg<code class="literal">,</code><span class="command"><strong>err</strong></span>,error (deprecated
+      synonym for <span class="command"><strong>err</strong></span>),info<code class="literal">,</code><span class="command"><strong>notice</strong></span>,panic (deprecated
+      synonym for <span class="command"><strong>emerg</strong></span>),warning<code class="literal">,</code><span class="command"><strong>warn</strong></span> (deprecated synonym
+      for <span class="command"><strong>warning</strong></span>).
+      For the priority order and intended purposes of these levels,
+      see <a class="link" href="../htmlman3/syslog.3.html" target="_top" shape="rect"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>.</p>
+    </div>
+
+    <div class="refsect1" title="EXAMPLES">
+      <a id="logger-1_sect3" name="logger-1_sect3" shape="rect"> </a>
+
+      <h2>EXAMPLES</h2>
+
+      <p>logger System rebooted</p>
+
+      <p>logger −p local0.notice −t HOSTIDM −f
+      /dev/idmc</p>
+
+      <p>logger −n loghost.example.com System rebooted</p>
+    </div>
+
+    <div class="refsect1" title="SEE ALSO">
+      <a id="logger-1_sect4" name="logger-1_sect4" shape="rect"> </a>
+
+      <h2>SEE ALSO</h2>
+
+      <p><a class="link" href="../htmlman3/syslog.3.html" target="_top" shape="rect"><span class="citerefentry"><span class="refentrytitle">syslog</span>(3)</span></a>, <span class="citerefentry"><span class="refentrytitle">syslogd</span>(8)</span></p>
+    </div>
+
+    <div class="refsect1" title="STANDARDS">
+      <a id="logger-1_sect5" name="logger-1_sect5" shape="rect"> </a>
+
+      <h2>STANDARDS</h2>
+
+      <p>The <span class="command"><strong>logger</strong></span>
+      command is expected to be IEEE Std 1003.2 ("POSIX.2")
+      compatible.</p>
+    </div>
+
+    <div class="refsect1" title="AVAILABILITY">
+      <a id="logger-1_sect6" name="logger-1_sect6" shape="rect"> </a>
+
+      <h2>AVAILABILITY</h2>
+
+      <p>The logger command is part of the util-linux package and
+      is available from <a class="literalurl" href="ftp://ftp.kernel.org/pub/linux/utils/util-linux/" target="_top" shape="rect">Linux Kernel Archive</a></p>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <div class="literallayout">
+                  <br />
+                    Copyright (c) 1983, 1990, 1993<br />
+
+                  The Regents of the University of California.  All rights reserved.<br />
+
+                  <br />
+                  Redistribution and use in source and binary forms, with or without<br />
+
+                  modification, are permitted provided that the following conditions<br />
+
+                  are met:<br />
+                  1. Redistributions of source code must retain the above copyright<br />
+
+                     notice, this list of conditions and the following disclaimer.<br />
+
+                  2. Redistributions in binary form must reproduce the above copyright<br />
+
+                     notice, this list of conditions and the following disclaimer in the<br />
+
+                     documentation and/or other materials provided with the distribution.<br />
+
+                  3. All advertising materials mentioning features or use of this software<br />
+
+                     must display the following acknowledgement:<br />
+
+                  This product includes software developed by the University of<br />
+
+                  California, Berkeley and its contributors.<br />
+
+                  4. Neither the name of the University nor the names of its contributors<br />
+
+                     may be used to endorse or promote products derived from this software<br />
+
+                     without specific prior written permission.<br />
+
+                  <br />
+                  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND<br />
+
+                  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE<br />
+
+                  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE<br />
+
+                  ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE<br />
+
+                  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL<br />
+
+                  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS<br />
+
+                  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)<br />
+
+                  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT<br />
+
+                  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY<br />
+
+                  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF<br />
+
+                  SUCH DAMAGE.<br />
+                  <br />
+                  <script type="text/javascript">document.write('@');</script><noscript>(@)</noscript>(#)logger.1
+                  8.1 (Berkeley) 6/6/93<br />
+                  <br />
+                  Section on valid facility and level strings added by<br />
+
+                  and1000<script type="text/javascript">document.write('@');</script><noscript>(@)</noscript>debian.org, 26 Oct 1997.<br />
+                  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

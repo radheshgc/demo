@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>gnutls_priority_init(3) — Linux manual pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="gnutls_priority_init(3) — Linux manual pages" />
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index3.html" shape="rect">Section 3</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry">
+    <a id="gnutls-priority-init.3" name="gnutls-priority-init.3" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>gnutls_priority_init — API function</p>
+    </div>
+
+    <div class="refsynopsisdiv">
+      <h2>Synopsis</h2>
+
+      <div class="funcsynopsis">
+        <pre class="funcsynopsisinfo" xml:space="preserve">
+#include &lt;gnutls/gnutls.h&gt;
+</pre>
+
+        <table border="0" class="funcprototype-table" summary="Function synopsis" style="cellspacing: 0; cellpadding: 0;">
+          <tr>
+            <td rowspan="1" colspan="1"><code class="funcdef">int
+            <strong>gnutls_priority_init</strong>(</code></td>
+
+            <td rowspan="1" colspan="1">gnutls_priority_t * <var class="pdparam">priority_cache</var>,</td>
+          </tr>
+
+          <tr>
+            <td rowspan="1" colspan="1"> </td>
+
+            <td rowspan="1" colspan="1">const char * <var class="pdparam">priorities</var>,</td>
+          </tr>
+
+          <tr>
+            <td rowspan="1" colspan="1"> </td>
+
+            <td rowspan="1" colspan="1">const char ** <var class="pdparam">err_pos</var><code>)</code>;</td>
+          </tr>
+        </table>
+
+        <div class="funcprototype-spacer">
+           
+        </div>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect1" name="gnutls-priority-init-3_sect1" shape="rect"> </a>
+
+      <h2>ARGUMENTS</h2>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><span class="emphasis"><em>gnutls_priority_t *
+          priority_cache</em></span></span></dt>
+
+          <dd>
+            <p>is a <span class="type">gnutls_prioritity_t</span>
+            structure.</p>
+          </dd>
+
+          <dt><span class="term"><span class="emphasis"><em>const
+          char * priorities</em></span></span></dt>
+
+          <dd>
+            <p>is a string describing priorities</p>
+          </dd>
+
+          <dt><span class="term"><span class="emphasis"><em>const
+          char ** err_pos</em></span></span></dt>
+
+          <dd>
+            <p>In case of an error this will have the position in
+            the string the error occured</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect2" name="gnutls-priority-init-3_sect2" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p>Sets priorities for the ciphers, key exchange methods,
+      macs and compression methods.</p>
+
+      <p>The <em class="parameter"><code>priorities</code></em>
+      option allows you to specify a colon separated list of the
+      cipher priorities to enable. Some keywords are defined to
+      provide quick access to common preferences.</p>
+
+      <p>"PERFORMANCE" means all the "secure" ciphersuites are
+      enabled, limited to 128 bit ciphers and sorted by terms of
+      speed performance.</p>
+
+      <p>"NORMAL" means all "secure" ciphersuites. The
+      256−bit ciphers are included as a fallback only. The
+      ciphers are sorted by security margin.</p>
+
+      <p>"SECURE128" means all "secure" ciphersuites of security
+      level 128−bit or more.</p>
+
+      <p>"SECURE192" means all "secure" ciphersuites of security
+      level 192−bit or more.</p>
+
+      <p>"SUITEB128" means all the NSA SuiteB ciphersuites with
+      security level of 128.</p>
+
+      <p>"SUITEB192" means all the NSA SuiteB ciphersuites with
+      security level of 192.</p>
+
+      <p>"EXPORT" means all ciphersuites are enabled, including the
+      low−security 40 bit ciphers.</p>
+
+      <p>"NONE" means nothing is enabled. This disables even
+      protocols and compression methods.</p>
+
+      <p>Special keywords are "!", "−" and "+". "!" or
+      "−" appended with an algorithm will remove this
+      algorithm. "+" appended with an algorithm will add this
+      algorithm.</p>
+
+      <p>Check the GnuTLS manual section "Priority strings" for
+      detailed information.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect3" name="gnutls-priority-init-3_sect3" shape="rect"> </a>
+
+      <h2>EXAMPLES</h2>
+
+      <p>
+      "NONE:+VERS−TLS−ALL:+MAC−ALL:+RSA:+AES−128−CBC:+SIGN−ALL:+COMP−NULL"</p>
+
+      <p>"NORMAL:−ARCFOUR−128" means normal ciphers
+      except for ARCFOUR−128.</p>
+
+      <p>"SECURE:−VERS−SSL3.0:+COMP−DEFLATE"
+      means that only secure ciphers are enabled, SSL3.0 is
+      disabled, and libz compression enabled.</p>
+
+      <p>
+      "NONE:+VERS−TLS−ALL:+AES−128−CBC:+RSA:+SHA1:+COMP−NULL:+SIGN−RSA−SHA1",</p>
+
+      <p>
+      "NONE:+VERS−TLS−ALL:+AES−128−CBC:+ECDHE−RSA:+SHA1:+COMP−NULL:+SIGN−RSA−SHA1:+CURVE−SECP256R1",</p>
+
+      <p>"SECURE256:+SECURE128",</p>
+
+      <p>Note that "NORMAL:<code class="constant">COMPAT</code>" is
+      the most compatible mode.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect4" name="gnutls-priority-init-3_sect4" shape="rect"> </a>
+
+      <h2>RETURNS</h2>
+
+      <p>On syntax error <span class="errorname">GNUTLS_E_INVALID_REQUEST</span> is returned,
+      <span class="errorname">GNUTLS_E_SUCCESS</span> on success,
+      or an error code.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect5" name="gnutls-priority-init-3_sect5" shape="rect"> </a>
+
+      <h2>REPORTING BUGS</h2>
+
+      <p>Report bugs to &lt;bug-gnutls@gnu.org&gt;.</p>
+
+      <p>General guidelines for reporting bugs:
+      http://www.gnu.org/gethelp/</p>
+
+      <p>GnuTLS home page: http://www.gnu.org/software/gnutls/</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-priority-init-3_sect7" name="gnutls-priority-init-3_sect7" shape="rect"> </a>
+
+      <h2>SEE ALSO</h2>
+
+      <p>The full documentation for <em class="citetitle">gnutls</em> is maintained as a Texinfo manual. If
+      the <span class="command"><strong>info</strong></span> and
+      <em class="citetitle">gnutls</em> programs are properly
+      installed at your site, the command</p>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+info gnutls
+</pre>
+      </div>
+
+      <p>should give you access to the complete manual. As an
+      alternative you may obtain the manual from:</p>
+
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc;">
+          <li class="listitem">
+            <p><a class="literalurl" href="http://www.gnu.org/software/gnutls/manual/" target="_top" shape="rect">http://www.gnu.org/software/gnutls/manual/</a></p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th style="" rowspan="1" colspan="1">COPYRIGHT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <p>Copyright © 2012 Free Software Foundation,
+                Inc..</p>
+
+                <p>Copying and distribution of this file, with or
+                without modification, are permitted in any medium
+                without royalty provided the copyright notice and
+                this notice are preserved.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>pcre_pattern_to_host_byte_order(3) — Linux manual
+  pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="pcre_pattern_to_host_byte_order(3) — Linux manual pages" />
+
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index3.html" shape="rect">Section 3</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry" title="pcre_pattern_to_host_byte_order(3) — Linux manual pages">
+    <a id="pcre-pattern-to-host-byte-order.3" name="pcre-pattern-to-host-byte-order.3" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>PCRE — Perl-compatible regular expressions</p>
+    </div>
+
+    <div class="refsynopsisdiv" title="Synopsis">
+      <h2>Synopsis</h2>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+#include &lt;pcre.h&gt;
+
+
+int pcre_pattern_to_host_byte_order(pcre *<code class="function">code</code>,
+pcre_extra *<code class="function">extra</code>, const unsigned char *<code class="function">tables</code>);
+
+int pcre16_pattern_to_host_byte_order(pcre16 *<code class="function">code</code>,
+pcre16_extra *<code class="function">extra</code>, const unsigned char *<code class="function">tables</code>);
+  
+</pre>
+      </div>
+    </div>
+
+    <div class="refsect1" title="DESCRIPTION">
+      <a id="pcre-pattern-to-host-byte-order-3_sect1" name="pcre-pattern-to-host-byte-order-3_sect1" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p>This function ensures that the bytes in 2-byte and 4-byte
+      values in a compiled pattern are in the correct order for the
+      current host. It is useful when a pattern that has been
+      compiled on one host is transferred to another that might
+      have different endianness. The arguments are:</p>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+ <code class="function">code</code>         A compiled regular expression
+ <code class="function">extra</code>        Points to an associated <em class="replaceable"><code>pcre[16]_extra</code></em> structure,
+                or is NULL
+ <code class="function">tables</code>       Pointer to character tables, or NULL to
+                set the built-in default
+</pre>
+      </div>
+
+      <p>The result is 0 for success, a negative PCRE_ERROR_xxx
+      value otherwise.</p>
+
+      <p>There is a complete description of the PCRE native API in
+      the <a class="link" href="../htmlman3/pcreapi.3.html" target="_top" shape="rect"><span class="citerefentry"><span class="refentrytitle">pcreapi</span>(3)</span></a> page and a
+      description of the POSIX API in the <a class="link" href="../htmlman3/pcreposix.3.html" target="_top" shape="rect"><span class="citerefentry"><span class="refentrytitle">pcreposix</span>(3)</span></a> page.</p>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th style="" rowspan="1" colspan="1">COPYRIGHT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <p>This manual page is taken from the <a class="ulink" href="http://www.PCRE.org/" target="_top" shape="rect">PCRE library</a>, which is distributed under
+                the BSD license.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

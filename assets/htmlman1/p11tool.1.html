@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>p11tool(1) — Linux manual pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="p11tool(1) — Linux manual pages" />
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index1.html" shape="rect">Section 1</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry">
+    <a id="p11tool.1" name="p11tool.1" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>p11tool — GnuTLS PKCS #11 tool</p>
+    </div>
+
+    <div class="refsynopsisdiv">
+      <h2>Synopsis</h2>
+
+      <div class="cmdsynopsis">
+        <p><code class="command">p11tool</code> [ <code class="option">−flag</code> [<em class="replaceable"><code>value</code></em>] ...] [ <code class="option">−−opt−name</code> [<em class="replaceable"><code>[=|]value</code></em>] ...] [<em class="replaceable"><code>url</code></em>]</p>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect1" name="p11tool-1_sect1" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p>Program that allows handling data from PKCS #11 smart
+      cards and security modules. To use PKCS #11 tokens with
+      gnutls the configuration file /etc/gnutls/pkcs11.conf has to
+      exist and contain a number of lines of the form
+      'load=/usr/lib/opensc-pkcs11.so'.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect2" name="p11tool-1_sect2" shape="rect"> </a>
+
+      <h2>OPTIONS</h2>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><code class="option">−d
+          <em class="parameter"><code>number</code></em>,
+          −−debug=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Enable debugging.. This option takes an integer
+            number as its argument. The value of <span class="command"><strong>number</strong></span> is constrained
+            to being:</p>
+
+            <div class="blockquote">
+              <blockquote class="blockquote">
+                <div class="informalexample">
+                  <pre class="programlisting" xml:space="preserve">
+in the range  0 through 9999
+</pre>
+                </div>
+              </blockquote>
+            </div>
+
+            <p>Specifies the debug level.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−outfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Output file.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−tokens</code></span></dt>
+
+          <dd>
+            <p>List all available tokens.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−export</code></span></dt>
+
+          <dd>
+            <p>Export the object specified by the URL.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−mechanisms</code></span></dt>
+
+          <dd>
+            <p>List all available mechanisms in a token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−all</code></span></dt>
+
+          <dd>
+            <p>List all available objects in a token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−all−certs</code></span></dt>
+
+          <dd>
+            <p>List all available certificates in a token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−certs</code></span></dt>
+
+          <dd>
+            <p>List all certificates that have an associated
+            private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−all−privkeys</code></span></dt>
+
+          <dd>
+            <p>List all available private keys in a token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−list−all−trusted</code></span></dt>
+
+          <dd>
+            <p>List all available certificates marked as
+            trusted.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−initialize</code></span></dt>
+
+          <dd>
+            <p>Initializes a PKCS #11 token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−write</code></span></dt>
+
+          <dd>
+            <p>Writes the loaded objects to a PKCS #11 token.</p>
+
+            <p>It can be used to write private keys, certificates
+            or secret keys to a token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−delete</code></span></dt>
+
+          <dd>
+            <p>Deletes the objects matching the PKCS #11 URL.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−rsa</code></span></dt>
+
+          <dd>
+            <p>Generate an RSA private-public key pair.</p>
+
+            <p>Generates an RSA private-public key pair on the
+            specified token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−dsa</code></span></dt>
+
+          <dd>
+            <p>Generate an RSA private-public key pair.</p>
+
+            <p>Generates an RSA private-public key pair on the
+            specified token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−ecc</code></span></dt>
+
+          <dd>
+            <p>Generate an RSA private-public key pair.</p>
+
+            <p>Generates an RSA private-public key pair on the
+            specified token.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−label=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Sets a label for the write operation.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−trusted, <code class="option">−−no−trusted</code></code></span></dt>
+
+          <dd>
+            <p>Marks the object to be written as trusted. The
+            <em class="replaceable"><code>no−trusted</code></em> form
+            will disable the option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−private, <code class="option">−−no−private</code></code></span></dt>
+
+          <dd>
+            <p>Marks the object to be written as private. The
+            <em class="replaceable"><code>no−private</code></em> form
+            will disable the option. This option is enabled by
+            default.</p>
+
+            <p>The written object will require a PIN to be
+            used.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−login, <code class="option">−−no−login</code></code></span></dt>
+
+          <dd>
+            <p>Force login to token. The <em class="replaceable"><code>no−login</code></em> form
+            will disable the option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−detailed−url, <code class="option">−−no−detailed−url</code></code></span></dt>
+
+          <dd>
+            <p>Print detailed URLs. The <em class="replaceable"><code>no−detailed−url</code></em>
+            form will disable the option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−secret−key=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Provide a hex encoded secret key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−privkey=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Private key file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−pubkey=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Public key file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−certificate=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Certificate file to use.</p>
+          </dd>
+
+          <dt><span class="term"><span class="emphasis"><em>−8,
+          -−pkcs8</em></span></span></dt>
+
+          <dd>
+            <p>Use PKCS #8 format for private keys.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−bits=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Specify the number of bits for key generate. This
+            option takes an integer number as its argument.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−sec−param=<span class="emphasis"><em>security
+          parameter</em></span></code></span></dt>
+
+          <dd>
+            <p>Specify the security level.</p>
+
+            <p>This is alternative to the bits option. Available
+            options are [low, legacy, normal, high, ultra].</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−inder, <code class="option">−−no−inder</code></code></span></dt>
+
+          <dd>
+            <p>Use DER/RAW format for input. The <em class="replaceable"><code>no−inder</code></em> form
+            will disable the option.</p>
+
+            <p>Use DER/RAW format for input certificates and
+            private keys.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−inder</code></span></dt>
+
+          <dd>
+            <p>This is an alias for the inder option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−provider=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Specify the PKCS #11 provider library.</p>
+
+            <p>This will override the default options in
+            /etc/gnutls/pkcs11.conf</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−h,
+          −−help</code></span></dt>
+
+          <dd>
+            <p>Display usage information and exit.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−!,
+          −−more−help</code></span></dt>
+
+          <dd>
+            <p>Pass the extended usage information through a
+            pager.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−v
+          [{<em class="replaceable"><code>v|c|n</code></em>}],
+          −−version[=<em class="replaceable"><code>{v|c|n}</code></em>]</code></span></dt>
+
+          <dd>
+            <p>Output version of program and exit. The default mode
+            is `v', a simple version. The `c' mode will print
+            copyright information and `n' will print the full
+            copyright notice.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect3" name="p11tool-1_sect3" shape="rect"> </a>
+
+      <h2>EXAMPLES</h2>
+
+      <p>To view all tokens in your system use:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ p11tool −−list−tokens
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To view all objects in a token use:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ p11tool −−login −−list−all "pkcs11:TOKEN−URL"
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To store a private key and a certificate in a token
+      run:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ p11tool −−login −−write "pkcs11:URL" −−load−privkey key.pem           −−label "Mykey"
+$ p11tool −−login −−write "pkcs11:URL" −−load−certificate cert.pem           −−label "Mykey"
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Note that some tokens require the same label to be used
+      for the certificate and its corresponding private key.</p>
+
+      <p>To generate an RSA private key inside the token use:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ p11tool −−login −−generate−rsa −−bits 1024 −−label "MyNewKey"           −−outfile MyNewKey.pub "pkcs11:TOKEN−URL"
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>The bits parameter in the above example is explicitly set
+      because some tokens only support a limited number of bits.
+      The output file is the corresponding public key. This key can
+      be used to general a certificate request with certtool.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+certtool −−generate−request −−load−privkey "pkcs11:KEY−URL"    −−load−pubkey MyNewKey.pub −−outfile request.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect4" name="p11tool-1_sect4" shape="rect"> </a>
+
+      <h2>EXIT STATUS</h2>
+
+      <p>One of the following exit values will be returned:</p>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+<code class="constant">0</code> (EXIT_SUCCESS)
+</pre>
+      </div>
+
+      <p>Successful program execution.</p>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+<code class="constant">1</code> (EXIT_FAILURE)
+</pre>
+      </div>
+
+      <p>The operation failed or the command syntax was not
+      valid.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect5" name="p11tool-1_sect5" shape="rect"> </a>
+
+      <h2>SEE ALSO</h2>
+
+      <p>certtool (1)</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect6" name="p11tool-1_sect6" shape="rect"> </a>
+
+      <h2>AUTHORS</h2>
+
+      <p>Nikos Mavrogiannopoulos, Simon Josefsson and others; see
+      /usr/share/doc/gnutls-bin/AUTHORS for a complete list.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect8" name="p11tool-1_sect8" shape="rect"> </a>
+
+      <h2>BUGS</h2>
+
+      <p>Please send bug reports to: bug-gnutls@gnu.org</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="p11tool-1_sect9" name="p11tool-1_sect9" shape="rect"> </a>
+
+      <h2>NOTES</h2>
+
+      <p>This manual page was <span class="command"><strong>AutoGen</strong></span>-erated from the
+      <span class="command"><strong>p11tool</strong></span> option
+      definitions.</p>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th style="" rowspan="1" colspan="1">COPYRIGHT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <p>Copyright (C) 2000-2012 Free Software Foundation
+                all rights reserved. This program is released under
+                the terms of the GNU General Public License,
+                version 3 or later.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

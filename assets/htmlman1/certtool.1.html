@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>certtool(1) — Linux manual pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="certtool(1) — Linux manual pages" />
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index1.html" shape="rect">Section 1</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry">
+    <a id="certtool.1" name="certtool.1" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>certtool — GnuTLS certificate tool</p>
+    </div>
+
+    <div class="refsynopsisdiv">
+      <h2>Synopsis</h2>
+
+      <div class="cmdsynopsis">
+        <p><code class="command">certtool</code> [ <code class="option">−flag</code> [<em class="replaceable"><code>value</code></em>] ...] [ <code class="option">−−opt−name</code> [<em class="replaceable"><code>[=|]value</code></em>] ...]</p>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect1" name="certtool-1_sect1" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p>Tool to parse and generate X.509 certificates, requests
+      and private keys. It can be used interactively or non
+      interactively by specifying the template command line
+      option.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect2" name="certtool-1_sect2" shape="rect"> </a>
+
+      <h2>OPTIONS</h2>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><code class="option">−d
+          <em class="parameter"><code>number</code></em>,
+          −−debug=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Enable debugging.. This option takes an integer
+            number as its argument. The value of <span class="command"><strong>number</strong></span> is constrained
+            to being:</p>
+
+            <div class="blockquote">
+              <blockquote class="blockquote">
+                <div class="informalexample">
+                  <pre class="programlisting" xml:space="preserve">
+in the range  0 through 9999
+</pre>
+                </div>
+              </blockquote>
+            </div>
+
+            <p>Specifies the debug level.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−V,
+          −−verbose</code></span></dt>
+
+          <dd>
+            <p>More verbose output. This option may appear an
+            unlimited number of times.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−infile=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Input file.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−outfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Output file.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−s,
+          −−generate−self−signed</code></span></dt>
+
+          <dd>
+            <p>Generate a self-signed certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−c,
+          −−generate−certificate</code></span></dt>
+
+          <dd>
+            <p>Generate a signed certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−proxy</code></span></dt>
+
+          <dd>
+            <p>Generates a proxy certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−crl</code></span></dt>
+
+          <dd>
+            <p>Generate a CRL.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−u,
+          −−update−certificate</code></span></dt>
+
+          <dd>
+            <p>Update a signed certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−p,
+          −−generate−privkey</code></span></dt>
+
+          <dd>
+            <p>Generate a private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−q,
+          −−generate−request</code></span></dt>
+
+          <dd>
+            <p>Generate a PKCS #10 certificate request. This option
+            must not appear in combination with any of the
+            following options: infile.</p>
+
+            <p>Will generate a PKCS #10 certificate request. To
+            specify a private key use −-load-privkey.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−e,
+          −−verify−chain</code></span></dt>
+
+          <dd>
+            <p>Verify a PEM encoded certificate chain..</p>
+
+            <p>The last certificate in the chain must be a self
+            signed one.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−verify</code></span></dt>
+
+          <dd>
+            <p>Verify a PEM encoded certificate chain using a
+            trusted list.. This option must appear in combination
+            with the following options: load-ca-certificate.</p>
+
+            <p>The trusted certificate list must be loaded with
+            −-load-ca-certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−verify−crl</code></span></dt>
+
+          <dd>
+            <p>Verify a CRL using a trusted list.. This option must
+            appear in combination with the following options:
+            load-ca-certificate.</p>
+
+            <p>The trusted certificate list must be loaded with
+            −-load-ca-certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−generate−dh−params</code></span></dt>
+
+          <dd>
+            <p>Generate PKCS #3 encoded Diffie-Hellman
+            parameters..</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−get−dh−params</code></span></dt>
+
+          <dd>
+            <p>Get the included PKCS #3 encoded Diffie-Hellman
+            parameters..</p>
+
+            <p>Returns stored DH parameters in GnuTLS. Those
+            parameters are used in the SRP protocol. The parameters
+            returned by fresh generation are more efficient since
+            GnuTLS 3.0.9.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−dh−info</code></span></dt>
+
+          <dd>
+            <p>Print information PKCS #3 encoded Diffie-Hellman
+            parameters.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−privkey=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads a private key file.</p>
+
+            <p>This can be either a file or a PKCS #11 URL</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−pubkey=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads a public key file.</p>
+
+            <p>This can be either a file or a PKCS #11 URL</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−request=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads a certificate request file.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−certificate=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads a certificate file.</p>
+
+            <p>This can be either a file or a PKCS #11 URL</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−ca−privkey=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads the certificate authority's private key
+            file.</p>
+
+            <p>This can be either a file or a PKCS #11 URL</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−load−ca−certificate=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Loads the certificate authority's certificate
+            file.</p>
+
+            <p>This can be either a file or a PKCS #11 URL</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−password=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Password to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−hex−numbers</code></span></dt>
+
+          <dd>
+            <p>Print big number in an easier format to parse.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−null−password</code></span></dt>
+
+          <dd>
+            <p>Enforce a NULL password.</p>
+
+            <p>This option enforces a NULL password. This may be
+            different than the empty password in some schemas.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−i,
+          −−certificate−info</code></span></dt>
+
+          <dd>
+            <p>Print information on the given certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−certificate−pubkey</code></span></dt>
+
+          <dd>
+            <p>Print certificate's public key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgp−certificate−info</code></span></dt>
+
+          <dd>
+            <p>Print information on the given OpenPGP
+            certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgp−ring−info</code></span></dt>
+
+          <dd>
+            <p>Print information on the given OpenPGP keyring
+            structure.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−l,
+          −−crl−info</code></span></dt>
+
+          <dd>
+            <p>Print information on the given CRL structure.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−crq−info</code></span></dt>
+
+          <dd>
+            <p>Print information on the given certificate
+            request.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−no−crq−extensions</code></span></dt>
+
+          <dd>
+            <p>Do not use extensions in certificate requests.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−p12−info</code></span></dt>
+
+          <dd>
+            <p>Print information on a PKCS #12 structure.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−p7−info</code></span></dt>
+
+          <dd>
+            <p>Print information on a PKCS #7 structure.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−smime−to−p7</code></span></dt>
+
+          <dd>
+            <p>Convert S/MIME to PKCS #7 structure.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−k,
+          −−key−info</code></span></dt>
+
+          <dd>
+            <p>Print information on a private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgp−key−info</code></span></dt>
+
+          <dd>
+            <p>Print information on an OpenPGP private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pubkey−info</code></span></dt>
+
+          <dd>
+            <p>Print information on a public key.</p>
+
+            <p>The option combined with −-load-request,
+            −-load-pubkey, −-load-privkey and
+            −-load-certificate will extract the public key of
+            the object in question.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−v1</code></span></dt>
+
+          <dd>
+            <p>Generate an X.509 version 1 certificate (with no
+            extensions).</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−to−p12</code></span></dt>
+
+          <dd>
+            <p>Generate a PKCS #12 structure. This option must
+            appear in combination with the following options:
+            load-certificate.</p>
+
+            <p>It requires a certificate, a private key and
+            possibly a CA certificate to be specified.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−to−p8</code></span></dt>
+
+          <dd>
+            <p>Generate a PKCS #8 structure.</p>
+          </dd>
+
+          <dt><span class="term"><span class="emphasis"><em>−8,
+          -−pkcs8</em></span></span></dt>
+
+          <dd>
+            <p>Use PKCS #8 format for private keys.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−rsa</code></span></dt>
+
+          <dd>
+            <p>Generate RSA key.</p>
+
+            <p>When combined with −-generate-privkey
+            generates an RSA private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−dsa</code></span></dt>
+
+          <dd>
+            <p>Generate DSA key.</p>
+
+            <p>When combined with −-generate-privkey
+            generates a DSA private key.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−ecc</code></span></dt>
+
+          <dd>
+            <p>Generate ECC (ECDSA) key.</p>
+
+            <p>When combined with −-generate-privkey
+            generates an elliptic curve private key to be used with
+            ECDSA.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−ecc</code></span></dt>
+
+          <dd>
+            <p>This is an alias for the ecc option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−hash=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Hash algorithm to use for signing..</p>
+
+            <p>Available hash functions are SHA1, RMD160, SHA256,
+            SHA384, SHA512.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−inder, <code class="option">−−no−inder</code></code></span></dt>
+
+          <dd>
+            <p>Use DER format for input certificates and private
+            keys.. The <em class="replaceable"><code>no−inder</code></em> form
+            will disable the option.</p>
+
+            <p>The input files will be assumed to be in DER or RAW
+            format. Unlike options that in PEM input would allow
+            multiple input data (e.g. multiple certificates), when
+            reading in DER format a single data structure is
+            read.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−inder</code></span></dt>
+
+          <dd>
+            <p>This is an alias for the inder option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−outder, <code class="option">−−no−outder</code></code></span></dt>
+
+          <dd>
+            <p>Use DER format for output certificates and private
+            keys. The <em class="replaceable"><code>no−outder</code></em> form
+            will disable the option.</p>
+
+            <p>The output will be in DER or RAW format.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−outder</code></span></dt>
+
+          <dd>
+            <p>This is an alias for the outder option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−bits=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Specify the number of bits for key generate. This
+            option takes an integer number as its argument.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−sec−param=<span class="emphasis"><em>security
+          parameter</em></span></code></span></dt>
+
+          <dd>
+            <p>Specify the security level [low, legacy, normal,
+            high, ultra]..</p>
+
+            <p>This is alternative to the bits option.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−disable−quick−random</code></span></dt>
+
+          <dd>
+            <p>No effect.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−template=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>Template file to use for non-interactive
+            operation.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pkcs−cipher=<em class="parameter"><code>cipher</code></em></code></span></dt>
+
+          <dd>
+            <p>Cipher to use for PKCS #8 and #12 operations.</p>
+
+            <p>Cipher may be one of 3des, 3des-pkcs12, aes-128,
+            aes-192, aes-256, rc2-40, arcfour.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−h,
+          −−help</code></span></dt>
+
+          <dd>
+            <p>Display usage information and exit.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−!,
+          −−more−help</code></span></dt>
+
+          <dd>
+            <p>Pass the extended usage information through a
+            pager.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−v
+          [{<em class="replaceable"><code>v|c|n</code></em>}],
+          −−version[=<em class="replaceable"><code>{v|c|n}</code></em>]</code></span></dt>
+
+          <dd>
+            <p>Output version of program and exit. The default mode
+            is `v', a simple version. The `c' mode will print
+            copyright information and `n' will print the full
+            copyright notice.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect3" name="certtool-1_sect3" shape="rect"> </a>
+
+      <h2>FILES</h2>
+
+      <p><span class="emphasis"><em>Certtool's template file
+      format</em></span></p>
+
+      <p>A template file can be used to avoid the interactive
+      questions of certtool. Initially create a file named
+      'cert.cfg' that contains the information about the
+      certificate. The template can be used as below:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−certificate cert.pem −−load−privkey key.pem     −−template cert.cfg    −−load−ca−certificate ca−cert.pem −−load−ca−privkey ca−key.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>An example certtool template file that can be used to
+      generate a certificate request or a self signed certificate
+      follows.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+# X.509 Certificate options
+#
+# DN options
+
+# The organization of the subject.
+organization = "Koko inc."
+
+# The organizational unit of the subject.
+unit = "sleeping dept."
+
+# The locality of the subject.
+# locality =
+
+# The state of the certificate owner.
+state = "Attiki"
+
+# The country of the subject. Two letter code.
+country = GR
+
+# The common name of the certificate owner.
+cn = "Cindy Lauper"
+
+# A user id of the certificate owner.
+#uid = "clauper"
+
+# Set domain components
+#dc = "name"
+#dc = "domain"
+
+# If the supported DN OIDs are not adequate you can set
+# any OID here.
+# For example set the X.520 Title and the X.520 Pseudonym
+# by using OID and string pairs.
+#dn_oid = 2.5.4.12 Dr. 
+#dn_oid = 2.5.4.65 jackal
+
+# This is deprecated and should not be used in new
+# certificates.
+# pkcs9_email = "none@none.org"
+
+# The serial number of the certificate
+serial = 007
+
+# In how many days, counting from today, this certificate will expire.
+expiration_days = 700
+
+# X.509 v3 extensions
+
+# A dnsname in case of a WWW server.
+#dns_name = "www.none.org"
+#dns_name = "www.morethanone.org"
+
+# A subject alternative name URI
+#uri = "http://www.example.com"
+
+# An IP address in case of a server.
+#ip_address = "192.168.1.1"
+
+# An email in case of a person
+email = "none@none.org"
+
+# Challenge password used in certificate requests
+challenge_password = 123456
+
+# Password when encrypting a private key
+#password = secret
+
+# An URL that has CRLs (certificate revocation lists)
+# available. Needed in CA certificates.
+#crl_dist_points = "http://www.getcrl.crl/getcrl/"
+
+# Whether this is a CA certificate or not
+#ca
+
+# for microsoft smart card logon
+# key_purpose_oid = 1.3.6.1.4.1.311.20.2.2
+
+### Other predefined key purpose OIDs
+
+# Whether this certificate will be used for a TLS client
+#tls_www_client
+
+# Whether this certificate will be used for a TLS server
+#tls_www_server
+
+# Whether this certificate will be used to sign data (needed
+# in TLS DHE ciphersuites).
+signing_key
+
+# Whether this certificate will be used to encrypt data (needed
+# in TLS RSA ciphersuites). Note that it is preferred to use different
+# keys for encryption and signing.
+#encryption_key
+
+# Whether this key will be used to sign other certificates.
+#cert_signing_key
+
+# Whether this key will be used to sign CRLs.
+#crl_signing_key
+
+# Whether this key will be used to sign code.
+#code_signing_key
+
+# Whether this key will be used to sign OCSP data.
+#ocsp_signing_key
+
+# Whether this key will be used for time stamping.
+#time_stamping_key
+
+# Whether this key will be used for IPsec IKE operations.
+#ipsec_ike_key
+
+### end of key purpose OIDs
+
+# When generating a certificate from a certificate
+# request, then honor the extensions stored in the request
+# and store them in the real certificate.
+#honor_crq_extensions
+
+# Path length contraint. Sets the maximum number of
+# certificates that can be used to certify this certificate.
+# (i.e. the certificate chain length)
+#path_len = −1
+#path_len = 2
+
+# OCSP URI
+# ocsp_uri = http://my.ocsp.server/ocsp
+
+# CA issuers URI
+# ca_issuers_uri = http://my.ca.issuer
+
+# Certificate policies
+# policy1 = 1.3.6.1.4.1.5484.1.10.99.1.0
+# policy1_txt = "This is a long policy to summarize"
+# policy1_url = http://www.example.com/a−policy−to−read
+
+# policy2 = 1.3.6.1.4.1.5484.1.10.99.1.1
+# policy2_txt = "This is a short policy"
+# policy2_url = http://www.example.com/another−policy−to−read
+
+
+# Options for proxy certificates
+# proxy_policy_language = 1.3.6.1.5.5.7.21.1
+
+
+# Options for generating a CRL
+
+# next CRL update will be in 43 days (wow)
+#crl_next_update = 43
+
+# this is the 5th CRL by this CA
+#crl_number = 5
+</pre>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect4" name="certtool-1_sect4" shape="rect"> </a>
+
+      <h2>EXAMPLES</h2>
+
+      <p><span class="emphasis"><em>Generating private
+      keys</em></span></p>
+
+      <p>To create an RSA private key, run:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey −−outfile key.pem −−rsa
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To create a DSA or elliptic curves (ECDSA) private key use
+      the above command combined with 'dsa' or 'ecc' options.</p>
+
+      <p><span class="emphasis"><em>Generating certificate
+      requests</em></span></p>
+
+      <p>To create a certificate request (needed when the
+      certificate is issued by another party), run:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+certtool −−generate−request −−load−privkey key.pem    −−outfile request.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>If the private key is stored in a smart card you can
+      generate a request by specifying the private key object
+      URL.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ ./certtool −−generate−request −−load−privkey "pkcs11:..."   −−load−pubkey "pkcs11:..." −−outfile request.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <div class="informalexample">
+        <pre class="programlisting" xml:space="preserve">
+</pre>
+      </div>
+
+      <p><span class="emphasis"><em>Generating a self−signed
+      certificate</em></span></p>
+
+      <p>To create a self signed certificate, use the command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey −−outfile ca−key.pem
+$ certtool −−generate−self−signed −−load−privkey ca−key.pem    −−outfile ca−cert.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Note that a self−signed certificate usually belongs
+      to a certificate authority, that signs other
+      certificates.</p>
+
+      <p><span class="emphasis"><em>Generating a
+      certificate</em></span></p>
+
+      <p>To generate a certificate using the previous request, use
+      the command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−certificate −−load−request request.pem    −−outfile cert.pem −−load−ca−certificate ca−cert.pem    −−load−ca−privkey ca−key.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To generate a certificate using the private key only, use
+      the command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−certificate −−load−privkey key.pem    −−outfile cert.pem −−load−ca−certificate ca−cert.pem    −−load−ca−privkey ca−key.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p><span class="emphasis"><em>Certificate
+      information</em></span></p>
+
+      <p>To view the certificate information, use:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−certificate−info −−infile cert.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p><span class="emphasis"><em>PKCS #12 structure
+      generation</em></span></p>
+
+      <p>To generate a PKCS #12 structure using the previous key
+      and certificate, use the command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−load−certificate cert.pem −−load−privkey key.pem    −−to−p12 −−outder −−outfile key.p12
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Some tools (reportedly web browsers) have problems with
+      that file because it does not contain the CA certificate for
+      the certificate. To work around that problem in the tool, you
+      can use the -−load−ca−certificate parameter
+      as follows:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−load−ca−certificate ca.pem   −−load−certificate cert.pem −−load−privkey key.pem   −−to−p12 −−outder −−outfile key.p12
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p><span class="emphasis"><em>Diffie−Hellman parameter
+      generation</em></span></p>
+
+      <p>To generate parameters for Diffie−Hellman key
+      exchange, use the command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−dh−params −−outfile dh.pem −−sec−param normal
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p><span class="emphasis"><em>Proxy certificate
+      generation</em></span></p>
+
+      <p>Proxy certificate can be used to delegate your credential
+      to a temporary, typically short−lived, certificate. To
+      create one from the previously created certificate, first
+      create a temporary key and then generate a proxy certificate
+      for it, using the commands:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey &gt; proxy−key.pem
+$ certtool −−generate−proxy −−load−ca−privkey key.pem   −−load−privkey proxy−key.pem −−load−certificate cert.pem   −−outfile proxy−cert.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p><span class="emphasis"><em>Certificate revocation list
+      generation</em></span></p>
+
+      <p>To create an empty Certificate Revocation List (CRL)
+      do:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−crl −−load−ca−privkey x509−ca−key.pem            −−load−ca−certificate x509−ca.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To create a CRL that contains some revoked certificates,
+      place the certificates in a file and use <code class="option">−−load−certificate</code> as
+      follows:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−crl −−load−ca−privkey x509−ca−key.pem   −−load−ca−certificate x509−ca.pem −−load−certificate revoked−certs.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To verify a Certificate Revocation List (CRL) do:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−verify−crl −−load−ca−certificate x509−ca.pem &lt; crl.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect5" name="certtool-1_sect5" shape="rect"> </a>
+
+      <h2>EXIT STATUS</h2>
+
+      <p>One of the following exit values will be returned:</p>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><code class="constant">0</code>
+          (EXIT_SUCCESS)</span></dt>
+
+          <dd>
+            <p>Successful program execution.</p>
+          </dd>
+
+          <dt><span class="term"><code class="constant">1</code>
+          (EXIT_FAILURE)</span></dt>
+
+          <dd>
+            <p>The operation failed or the command syntax was not
+            valid.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect6" name="certtool-1_sect6" shape="rect"> </a>
+
+      <h2>SEE ALSO</h2>
+
+      <p>p11tool (1)</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect7" name="certtool-1_sect7" shape="rect"> </a>
+
+      <h2>AUTHORS</h2>
+
+      <p>Nikos Mavrogiannopoulos, Simon Josefsson and others; see
+      /usr/share/doc/gnutls-bin/AUTHORS for a complete list.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect9" name="certtool-1_sect9" shape="rect"> </a>
+
+      <h2>BUGS</h2>
+
+      <p>Please send bug reports to: bug-gnutls@gnu.org</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="certtool-1_sect10" name="certtool-1_sect10" shape="rect"> </a>
+
+      <h2>NOTES</h2>
+
+      <p>This manual page was <span class="command"><strong>AutoGen</strong></span>-erated from the
+      <span class="command"><strong>certtool</strong></span> option
+      definitions.</p>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th style="" rowspan="1" colspan="1">COPYRIGHT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <p>Copyright (C) 2000-2012 Free Software Foundation
+                all rights reserved. This program is released under
+                the terms of the GNU General Public License,
+                version 3 or later.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

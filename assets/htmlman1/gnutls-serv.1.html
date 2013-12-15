@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>gnutls-serv(1) — Linux manual pages</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheet/manpages.css" />
+  
+  <link rel="home" href="../index.html" title="gnutls-serv(1) — Linux manual pages" />
+  <script type="text/javascript" src="../stylesheet/manpages.js" xml:space="preserve">
+</script>
+  <link rel="icon" href="../stylesheet/icon.gif" type="image/gif" />
+</head>
+
+<body onload="javascript:init()">
+  <div class="navheader">
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td style="width: 33%" rowspan="1" colspan="1"><a href="../index.html" shape="rect">Linux
+          manual pages</a></td>
+
+          <th rowspan="1" colspan="1"><a href="../index1.html" shape="rect">Section 1</a></th>
+
+          <td style="width: 33%" rowspan="1" colspan="1"> </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr />
+  </div>
+
+  <div class="refentry">
+    <a id="gnutls-serv.1" name="gnutls-serv.1" shape="rect"> </a>
+
+    <div class="titlepage"> </div>
+
+    <div class="refnamediv">
+      <h2>Name</h2>
+
+      <p>gnutls-serv — GnuTLS server</p>
+    </div>
+
+    <div class="refsynopsisdiv">
+      <h2>Synopsis</h2>
+
+      <div class="cmdsynopsis">
+        <p><code class="command">gnutls-serv</code> [ <code class="option">−flag</code> [<em class="replaceable"><code>value</code></em>] ...] [ <code class="option">−−opt−name</code> [<em class="replaceable"><code>[=|]value</code></em>] ...]</p>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect1" name="gnutls-serv-1_sect1" shape="rect"> </a>
+
+      <h2>DESCRIPTION</h2>
+
+      <p>Server program that listens to incoming TLS
+      connections.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect2" name="gnutls-serv-1_sect2" shape="rect"> </a>
+
+      <h2>OPTIONS</h2>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><code class="option">−d
+          <em class="parameter"><code>number</code></em>,
+          −−debug=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Enable debugging.. This option takes an integer
+            number as its argument. The value of <span class="command"><strong>number</strong></span> is constrained
+            to being:</p>
+
+            <div class="blockquote">
+              <blockquote class="blockquote">
+                <div class="informalexample">
+                  <pre class="programlisting" xml:space="preserve">
+in the range  0 through 9999
+</pre>
+                </div>
+              </blockquote>
+            </div>
+
+            <p>Specifies the debug level.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−noticket</code></span></dt>
+
+          <dd>
+            <p>Don't accept session tickets.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−g,
+          −−generate</code></span></dt>
+
+          <dd>
+            <p>Generate Diffie-Hellman and RSA-export
+            parameters.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−q,
+          −−quiet</code></span></dt>
+
+          <dd>
+            <p>Suppress some messages.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−nodb</code></span></dt>
+
+          <dd>
+            <p>Do not use a resumption database.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−http</code></span></dt>
+
+          <dd>
+            <p>Act as an HTTP server.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−echo</code></span></dt>
+
+          <dd>
+            <p>Act as an Echo server.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−u,
+          −−udp</code></span></dt>
+
+          <dd>
+            <p>Use DTLS (datagram TLS) over UDP.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−mtu=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>Set MTU for datagram TLS. This option takes an
+            integer number as its argument. The value of
+            <span class="command"><strong>number</strong></span> is
+            constrained to being:</p>
+
+            <div class="blockquote">
+              <blockquote class="blockquote">
+                <div class="informalexample">
+                  <pre class="programlisting" xml:space="preserve">
+in the range  0 through 17000
+</pre>
+                </div>
+              </blockquote>
+            </div>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−srtp−profiles=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Offer SRTP profiles.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−a,
+          −−disable−client−cert</code></span></dt>
+
+          <dd>
+            <p>Do not request a client certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−r,
+          −−require−client−cert</code></span></dt>
+
+          <dd>
+            <p>Require a client certificate.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−b,
+          −−heartbeat</code></span></dt>
+
+          <dd>
+            <p>Activate heartbeat support.</p>
+
+            <p>Regularly ping client via heartbeat extension
+            messages</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509fmtder</code></span></dt>
+
+          <dd>
+            <p>Use DER format for certificates to read from.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−priority=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Priorities string.</p>
+
+            <p>TLS algorithms and protocols to enable. You can use
+            predefined sets of ciphersuites such as PERFORMANCE,
+            NORMAL, SECURE128, SECURE256. Check the GnuTLS manual
+            on section <span class="quote">“<span class="quote">Priority strings</span>”</span> for more
+            information on allowed keywords</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−dhparams=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>DH params file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509cafile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Certificate file or PKCS #11 URL to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509crlfile=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>CRL file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgpkeyfile=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>PGP Key file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgpkeyring=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>PGP Key ring file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgpcertfile=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>PGP Public Key (certificate) file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509keyfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>X.509 key file or PKCS #11 URL to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509certfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>X.509 Certificate file or PKCS #11 URL to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509dsakeyfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Alternative X.509 key file or PKCS #11 URL to
+            use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509dsacertfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Alternative X.509 Certificate file or PKCS #11 URL
+            to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509ecckeyfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Alternative X.509 key file or PKCS #11 URL to
+            use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−x509ecccertfile=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>Alternative X.509 Certificate file or PKCS #11 URL
+            to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pgpsubkey=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>PGP subkey to use (hex or auto).</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−srppasswd=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>SRP password file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−srppasswdconf=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>SRP password configuration file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pskpasswd=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>PSK password file to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−pskhint=<em class="parameter"><code>string</code></em></code></span></dt>
+
+          <dd>
+            <p>PSK identity hint to use.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−−ocsp−response=<em class="parameter"><code>file</code></em></code></span></dt>
+
+          <dd>
+            <p>The OCSP response to send to client.</p>
+
+            <p>If the client requested an OCSP response, return
+            data from this file to the client.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−p
+          <em class="parameter"><code>number</code></em>,
+          −−port=<em class="parameter"><code>number</code></em></code></span></dt>
+
+          <dd>
+            <p>The port to connect to. This option takes an integer
+            number as its argument.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−l,
+          −−list</code></span></dt>
+
+          <dd>
+            <p>Print a list of the supported algorithms and
+            modes.</p>
+
+            <p>Print a list of the supported algorithms and modes.
+            If a priority string is given then only the enabled
+            ciphersuites are shown.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−h,
+          −−help</code></span></dt>
+
+          <dd>
+            <p>Display usage information and exit.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−!,
+          −−more−help</code></span></dt>
+
+          <dd>
+            <p>Pass the extended usage information through a
+            pager.</p>
+          </dd>
+
+          <dt><span class="term"><code class="option">−v
+          [{<em class="replaceable"><code>v|c|n</code></em>}],
+          −−version[=<em class="replaceable"><code>{v|c|n}</code></em>]</code></span></dt>
+
+          <dd>
+            <p>Output version of program and exit. The default mode
+            is `v', a simple version. The `c' mode will print
+            copyright information and `n' will print the full
+            copyright notice.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect3" name="gnutls-serv-1_sect3" shape="rect"> </a>
+
+      <h2>EXAMPLES</h2>
+
+      <p>Running your own TLS server based on GnuTLS can be useful
+      when debugging clients and/or GnuTLS itself. This section
+      describes how to use <em class="replaceable"><code>gnutls−serv</code></em> as a simple
+      HTTPS server.</p>
+
+      <p>The most basic server can be started as:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gnutls−serv −−http
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>It will only support anonymous ciphersuites, which many
+      TLS clients refuse to use.</p>
+
+      <p>The next step is to add support for X.509. First we
+      generate a CA:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey &gt; x509−ca−key.pem
+$ echo 'cn = GnuTLS test CA' &gt; ca.tmpl
+$ echo 'ca' &gt;&gt; ca.tmpl
+$ echo 'cert_signing_key' &gt;&gt; ca.tmpl
+$ certtool −−generate−self−signed −−load−privkey x509−ca−key.pem   −−template ca.tmpl −−outfile x509−ca.pem
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Then generate a server certificate. Remember to change the
+      dns_name value to the name of your server host, or skip that
+      command to avoid the field.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey &gt; x509−server−key.pem
+$ echo 'organization = GnuTLS test server' &gt; server.tmpl
+$ echo 'cn = test.gnutls.org' &gt;&gt; server.tmpl
+$ echo 'tls_www_server' &gt;&gt; server.tmpl
+$ echo 'encryption_key' &gt;&gt; server.tmpl
+$ echo 'signing_key' &gt;&gt; server.tmpl
+$ echo 'dns_name = test.gnutls.org' &gt;&gt; server.tmpl
+$ certtool −−generate−certificate −−load−privkey x509−server−key.pem   −−load−ca−certificate x509−ca.pem −−load−ca−privkey x509−ca−key.pem   −−template server.tmpl −−outfile x509−server.pem
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>For use in the client, you may want to generate a client
+      certificate as well.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey &gt; x509−client−key.pem
+$ echo 'cn = GnuTLS test client' &gt; client.tmpl
+$ echo 'tls_www_client' &gt;&gt; client.tmpl
+$ echo 'encryption_key' &gt;&gt; client.tmpl
+$ echo 'signing_key' &gt;&gt; client.tmpl
+$ certtool −−generate−certificate −−load−privkey x509−client−key.pem   −−load−ca−certificate x509−ca.pem −−load−ca−privkey x509−ca−key.pem   −−template client.tmpl −−outfile x509−client.pem
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>To be able to import the client key/certificate into some
+      applications, you will need to convert them into a PKCS#12
+      structure. This also encrypts the security sensitive key with
+      a password.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−to−p12 −−load−ca−certificate x509−ca.pem   −−load−privkey x509−client−key.pem −−load−certificate x509−client.pem   −−outder −−outfile x509−client.p12
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>For icing, we'll create a proxy certificate for the client
+      too.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey &gt; x509−proxy−key.pem
+$ echo 'cn = GnuTLS test client proxy' &gt; proxy.tmpl
+$ certtool −−generate−proxy −−load−privkey x509−proxy−key.pem   −−load−ca−certificate x509−client.pem −−load−ca−privkey x509−client−key.pem   −−load−certificate x509−client.pem −−template proxy.tmpl   −−outfile x509−proxy.pem
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Then start the server again:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ gnutls−serv −−http             −−x509cafile x509−ca.pem             −−x509keyfile x509−server−key.pem             −−x509certfile x509−server.pem
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Try connecting to the server using your web browser. Note
+      that the server listens to port 5556 by default.</p>
+
+      <p>While you are at it, to allow connections using DSA, you
+      can also create a DSA key and certificate for the server.
+      These credentials will be used in the final example
+      below.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+$ certtool −−generate−privkey −−dsa &gt; x509−server−key−dsa.pem
+$ certtool −−generate−certificate −−load−privkey x509−server−key−dsa.pem   −−load−ca−certificate x509−ca.pem −−load−ca−privkey x509−ca−key.pem   −−template server.tmpl −−outfile x509−server−dsa.pem
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>The next step is to create OpenPGP credentials for the
+      server.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gpg −−gen−key
+
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Make a note of the OpenPGP key identifier of the newly
+      generated key, here it was <code class="constant">5D1D14D8</code>. You will need to export the key
+      for GnuTLS to be able to use it.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gpg −a −−export 5D1D14D8 &gt; openpgp−server.txt
+gpg −−export 5D1D14D8 &gt; openpgp−server.bin
+gpg −−export−secret−keys 5D1D14D8 &gt; openpgp−server−key.bin
+gpg −a −−export−secret−keys 5D1D14D8 &gt; openpgp−server−key.txt
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Let's start the server with support for OpenPGP
+      credentials:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gnutls−serv −−http             −−pgpkeyfile openpgp−server−key.txt             −−pgpcertfile openpgp−server.txt
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>The next step is to add support for SRP authentication.
+      This requires an SRP password file created with <span class="command"><strong>srptool</strong></span>. To start the
+      server with SRP support:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gnutls−serv −−http             −−srppasswdconf srp−tpasswd.conf             −−srppasswd srp−passwd.txt
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Let's also start a server with support for PSK. This would
+      require a password file created with <span class="command"><strong>psktool</strong></span>.</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gnutls−serv −−http             −−pskpasswd psk−passwd.txt
+</pre>
+          </div>
+        </blockquote>
+      </div>
+
+      <p>Finally, we start the server with all the earlier
+      parameters and you get this command:</p>
+
+      <div class="blockquote">
+        <blockquote class="blockquote">
+          <div class="informalexample">
+            <pre class="programlisting" xml:space="preserve">
+gnutls−serv −−http             −−x509cafile x509−ca.pem             −−x509keyfile x509−server−key.pem             −−x509certfile x509−server.pem             −−x509dsakeyfile x509−server−key−dsa.pem             −−x509dsacertfile x509−server−dsa.pem             −−pgpkeyfile openpgp−server−key.txt             −−pgpcertfile openpgp−server.txt             −−srppasswdconf srp−tpasswd.conf             −−srppasswd srp−passwd.txt             −−pskpasswd psk−passwd.txt
+</pre>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect4" name="gnutls-serv-1_sect4" shape="rect"> </a>
+
+      <h2>EXIT STATUS</h2>
+
+      <p>One of the following exit values will be returned:</p>
+
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt><span class="term"><code class="constant">0</code>
+          (EXIT_SUCCESS)</span></dt>
+
+          <dd>
+            <p>Successful program execution.</p>
+          </dd>
+
+          <dt><span class="term"><code class="constant">1</code>
+          (EXIT_FAILURE)</span></dt>
+
+          <dd>
+            <p>The operation failed or the command syntax was not
+            valid.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect5" name="gnutls-serv-1_sect5" shape="rect"> </a>
+
+      <h2>SEE ALSO</h2>
+
+      <p>gnutls−cli− <span class="citerefentry"><span class="refentrytitle">debug</span>(1)</span>, gnutls−
+      <span class="citerefentry"><span class="refentrytitle">cli</span>(1)</span></p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect6" name="gnutls-serv-1_sect6" shape="rect"> </a>
+
+      <h2>AUTHORS</h2>
+
+      <p>Nikos Mavrogiannopoulos, Simon Josefsson and others; see
+      /usr/share/doc/gnutls-bin/AUTHORS for a complete list.</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect8" name="gnutls-serv-1_sect8" shape="rect"> </a>
+
+      <h2>BUGS</h2>
+
+      <p>Please send bug reports to: bug-gnutls@gnu.org</p>
+    </div>
+
+    <div class="refsect1">
+      <a id="gnutls-serv-1_sect9" name="gnutls-serv-1_sect9" shape="rect"> </a>
+
+      <h2>NOTES</h2>
+
+      <p>This manual page was <span class="command"><strong>AutoGen</strong></span>-erated from the
+      <em class="replaceable"><code>gnutls-serv</code></em> option
+      definitions.</p>
+
+      <div class="license">
+        <table style="border-collapse: collapse;">
+          <colgroup span="1">
+            <col span="1" />
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th style="" rowspan="1" colspan="1">COPYRIGHT</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td style="" rowspan="1" colspan="1">
+                <p>Copyright (C) 2000-2012 Free Software Foundation
+                all rights reserved. This program is released under
+                the terms of the GNU General Public License,
+                version 3 or later.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
